@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+.wrapper {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 99;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+  will-change: opacity, transform;
+  cursor: pointer;
+}
+
+.overlay--hide {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.control__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.control__item {
+  padding: 0;
+  margin: 0;
+}
+
+.control__item:not(:last-child) {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.left-wrap {
+  margin-right: 50px;
+}
+
+.field {
+  border: 2px solid darkgrey;
+}
+
+.row {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block {
+  padding: 0;
+  margin: 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid lightgrey;
+  transition: .1s;
+}
+
+.active {
+  background: #fff;
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: #78909C;
+    border-radius: 3px;
+  }
+}
+
+.disable {
+  background: #fff;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:before {
+    content: '';
+    width: 22px;
+    height: 22px;
+    background: #37474F;
+    border-radius: 3px;
+  }
+}
+
+.start,
+.restart {
+  box-shadow: inset 0 0 0 1px #37474F;
+  border: none;
+  color: #37474F;
+  background: white;
+  text-align: center;
+  cursor: pointer;
+  width: 120px;
+  padding: 10px 20px;
+  transition: .3s;
+  font-family: 'Press Start 2P', sans-serif;
+
+  &:hover {
+    box-shadow: inset 0 0 3px 1px #37474F;
+  }
+
+  &:active,
+  &:disabled {
+    box-shadow: none;
+    background: #ECEFF1;
+    color: #fff;
+  }
+}
+
+.coins {
+  width: 120px;
+  text-align: right;
+  padding: 10px 20px;
+  box-shadow: inset 0 0 0 1px #37474F;
+  color: #37474F;
+}

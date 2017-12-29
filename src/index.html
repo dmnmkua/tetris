@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tetris</title>
+  <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body>
+  <div class="overlay">
+    <ul class="control__list">
+      <li class="control__item">Arrow left - move left</li>
+      <li class="control__item">Arrow right - move right</li>
+      <li class="control__item">Arrow up - rotate</li>
+      <li class="control__item">Arrow down - fast speed</li>
+    </ul>
+  </div>
+  <div class="wrapper">
+    <div class="left-wrap">
+      <button id="start" class="start">Go!</button>
+      <p class="coins">0</p>
+    </div>
+    <div class="field">
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+      <ul class="row">
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+        <li class="block"></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="./js/main.js" charset="utf-8"></script>
+</body>
+</html>
