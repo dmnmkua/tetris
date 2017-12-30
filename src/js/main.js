@@ -3,16 +3,11 @@ const block = document.querySelectorAll('.block');
 const startBtn = document.querySelector('#start');
 const coinsField = document.querySelector('.coins');
 const overlay = document.querySelector('.overlay');
-// let startBlock;
-let stopFunc = false;
 let timer;
 let coins;
 let count;
-let stop;
 let data;
 let n = 1;
-let dotCount = 0;
-let cubeCount = 0;
 let startBlock = Math.round(row[0].children.length / 2);
 let rotateCount = 0;
 
@@ -1209,7 +1204,8 @@ function _eventFunc(ev) {
 
 //  Конструктор запуска точки
 function Start() {
-  stop = true;
+  timer /= 1.0001;
+  n = 1;
   count = 0;
   rotateCount = 0;
   startBlock = Math.round(row[0].children.length / 2);
@@ -1274,16 +1270,10 @@ function Dot() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.0001;
-      n = 1;
-      dotCount++;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -1338,16 +1328,10 @@ function Cube() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
-      cubeCount++;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -1434,15 +1418,10 @@ function FigOne() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -1531,15 +1510,10 @@ function Line() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -1627,15 +1601,10 @@ function FigTwo() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -1776,15 +1745,10 @@ function FigThree() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -1927,15 +1891,10 @@ function FigFour() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
@@ -2078,15 +2037,10 @@ function FigFive() {
       if(row[0].querySelector('.disable')) {
         return restart();
       }
-      stop = !stop;
-      timer /= 1.01;
-      n = 1;
       return Start();
     }
 
-    if(stop) {
-      setTimeout(_down.bind(this), timer * n);
-    }
+    setTimeout(_down.bind(this), timer * n);
   }
 
   _init = () => {
