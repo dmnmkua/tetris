@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 html {
-  background: url(https://st3.depositphotos.com/1025794/13322/v/170/depositphotos_133229814-stock-illustration-seamless-winter-background-with-snowflakes.jpg);
+  // background: url(https://st3.depositphotos.com/1025794/13322/v/170/depositphotos_133229814-stock-illustration-seamless-winter-background-with-snowflakes.jpg);
   min-height: 100vh;
 }
 
@@ -67,6 +67,7 @@ html {
 .field {
   border: 2px solid darkgrey;
   background: #fff;
+  position: relative;
 }
 
 .row {
@@ -78,6 +79,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 9;
 }
 
 .block {
@@ -152,8 +155,23 @@ html {
 .coins {
   width: 120px;
   text-align: right;
-  padding: 10px 20px;
-  box-shadow: inset 0 0 0 1px #37474F;
+  padding: 10px 19px;
+  // box-shadow: inset 0 0 0 1px #37474F;
   color: #37474F;
   background: #fff;
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 0;
+  letter-spacing: 9px;
+}
+
+.placeholder-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  text-transform: uppercase;
+  color: grey;
 }

@@ -1,8 +1,10 @@
+const field = document.querySelector('.field');
 const row = document.querySelectorAll('.row');
 const block = document.querySelectorAll('.block');
 const startBtn = document.querySelector('#start');
 const coinsField = document.querySelector('.coins');
 const overlay = document.querySelector('.overlay');
+const placeholderText = document.querySelector('.placeholder-text');
 let timer;
 let coins;
 let count;
@@ -15,19 +17,20 @@ events();
 
 
 //  Запуск игры
-startBtn.addEventListener('click', () => {
-  startBtn.setAttribute('disabled', 'disabled');
-  coinsField.innerHTML = '0';
-  coins = 0;
-  timer = 500;
-  // events();
-  let newGame = new Start();
-});
+// window.addEventListener('keyDown', () => {
+//   startBtn.setAttribute('disabled', 'disabled');
+//   coinsField.innerHTML = '0';
+//   coins = 0;
+//   timer = 500;
+//   // events();
+//   let newGame = new Start();
+// });
 
 //  Функция очистки поля
 function restart() {
   alert('game over');
-  startBtn.removeAttribute('disabled');
+  // startBtn.removeAttribute('disabled');
+  placeholderText.style.opacity = '1';
   for(let i = 0; i < block.length; i++) {
     if(block[i].classList.contains('disable')) {
       block[i].classList.remove('disable');
@@ -73,9 +76,18 @@ function events() {
     overlay.classList.add('overlay--hide');
   })
 
+  //  Запуск игры
   window.addEventListener('keydown', ev => {
     if(ev.keyCode === 13) {
       overlay.classList.add('overlay--hide');
+      if(!field.querySelector('.active')) {
+        placeholderText.style.opacity = '0';
+        coinsField.innerHTML = '0';
+        coins = 0;
+        timer = 500;
+        // events();
+        let newGame = new Start();
+      }
     }
   })
 
