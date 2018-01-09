@@ -12,6 +12,7 @@ let data;
 let n = 1;
 let startBlock = Math.round(row[0].children.length / 2);
 let rotateCount = 0;
+let next = Math.floor(Math.random() * 8);
 
 events();
 
@@ -39,6 +40,15 @@ function restart() {
       block[i].classList.remove('active');
     }
   }
+}
+
+//  Очистка показа следующей фигуры
+function clearNext() {
+  block.forEach(block => {
+    if(block.classList.contains('next')) {
+      block.classList.remove('next');
+    }
+  })
 }
 
 //  Функция офистки всех лишних активных классов
@@ -1216,7 +1226,7 @@ function _eventFunc(ev) {
 
 //  Конструктор запуска точки
 function Start() {
-  timer /= 1.0001;
+  timer /= 1.001;
   n = 1;
   count = 0;
   rotateCount = 0;
@@ -1224,7 +1234,10 @@ function Start() {
 
   x = Math.floor(Math.random() * 8);
 
-  switch(x) {
+  console.log(x);
+  showNext(x);
+
+  switch(next) {
     case 0:
       new Dot();
       break;
@@ -1250,6 +1263,8 @@ function Start() {
       new FigFive();
       break;
   }
+
+  next = x;
 
   // new Line()
 
@@ -2061,4 +2076,55 @@ function FigFive() {
   }
 
   _init();
+}
+
+function showNext(x) {
+
+  clearNext();
+
+  if(x === 0) {
+    row[1].children[1].classList.add('next');
+  }
+  else if(x === 1) {
+    row[0].children[0].classList.add('next');
+    row[0].children[1].classList.add('next');
+    row[1].children[0].classList.add('next');
+    row[1].children[1].classList.add('next');
+  }
+  else if(x === 2) {
+    row[0].children[1].classList.add('next');
+    row[0].children[2].classList.add('next');
+    row[1].children[0].classList.add('next');
+    row[1].children[1].classList.add('next');
+  }
+  else if(x === 3) {
+    row[0].children[0].classList.add('next');
+    row[1].children[0].classList.add('next');
+    row[2].children[0].classList.add('next');
+    row[3].children[0].classList.add('next');
+  }
+  else if(x === 4) {
+    row[0].children[0].classList.add('next');
+    row[0].children[1].classList.add('next');
+    row[1].children[1].classList.add('next');
+    row[1].children[2].classList.add('next');
+  }
+  else if(x === 5) {
+    row[0].children[0].classList.add('next');
+    row[0].children[1].classList.add('next');
+    row[0].children[2].classList.add('next');
+    row[1].children[0].classList.add('next');
+  }
+  else if(x === 6) {
+    row[0].children[0].classList.add('next');
+    row[0].children[1].classList.add('next');
+    row[0].children[2].classList.add('next');
+    row[1].children[2].classList.add('next');
+  }
+  else if(x === 7) {
+    row[0].children[0].classList.add('next');
+    row[0].children[1].classList.add('next');
+    row[0].children[2].classList.add('next');
+    row[1].children[1].classList.add('next');
+  }
 }
