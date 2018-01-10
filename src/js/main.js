@@ -30,6 +30,7 @@ events();
 //  Функция очистки поля
 function restart() {
   alert('game over');
+  clearNext();
   // startBtn.removeAttribute('disabled');
   placeholderText.style.opacity = '1';
   for(let i = 0; i < block.length; i++) {
